@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Image Example</title>
+	<script>
+	function getData(){
+		document.getElementById('img0').src='image.png'
+		setTimeout(getData, 1000)
+	}
+	</script>
+  </head>
+  <body>
+	<image id="img0"/>
+	<script>
+		getData()
+	</script>
+  </body>
+</html>
