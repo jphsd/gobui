@@ -39,6 +39,9 @@ func (d *Display) Load(img image.Image) {
 
 func (d *Display) servImg(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "image/png")
-	w.Header().Set("Cache-Control", "no-store")
+	//w.Header().Set("Cache-Control", "no-store")
+	//w.Header().Set("Cache-Control", "no-cache")
+	//w.Header().Set("Cache-Control", "max-age=1, must-revalidate")
+	//w.Header().Set("ETag", fmt.Sprintf("%d", d.mod.UnixMilli()))
 	http.ServeContent(w, r, "", d.mod, d.enc)
 }

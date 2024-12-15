@@ -4,7 +4,8 @@
     <title>Image Example</title>
 	<script>
 	function getData(){
-		document.getElementById('img0').src='image.png'
+		// Cache busting
+		document.getElementById('img0').src='image.png?'+Date.now()
 		setTimeout(getData, 1000)
 	}
 	</script>
